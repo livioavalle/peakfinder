@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 
-__author__ = "Moritz Kampelmuehler, Michael Mueller"
+__author__ = "Moritz Kampelmuehler, Michael Mueller, Livio Avalle"
+
+
+#Setup
+email = "example@server.com"
 
 import argparse
 import dill as pickle
 from geopy.geocoders import Nominatim
-from geopy.distance import vincenty as distance
+from geopy.distance import geodesic as distance
 import overpy
 import os
 import os.path
@@ -36,7 +40,7 @@ def main():
     assert(type(radius) is float)
     assert(count >= 0)
 
-    geolocator = Nominatim()
+    geolocator = Nominatim(user_agent=email)
     location = geolocator.geocode(address, addressdetails=True)
 
     cachedir = os.path.join(os.path.expanduser('~'), '.peakfinder_cache')
