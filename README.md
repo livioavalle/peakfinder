@@ -1,7 +1,17 @@
 # peakfinder
 Tool to find peaks within a specified radius of an address.
 
-### usage example
+### Requirements
+[argparse](https://pypi.org/project/argparse/)
+[dill](https://pypi.org/project/dill/)
+[geopy](https://pypi.org/project/geopy/)
+[overpy](https://pypi.org/project/overpy/)
+
+### Initial setup
+To use peakfinder you need to write your email in the email variable.
+Change from example@server.com to your email address in peakfinder.py in the Setup section.
+
+### Usage example
 
     $ python3 peakfinder.py -h
     usage: peakfinder.py [-h] [-r RADIUS] [-n COUNT] [-s {elevation,distance}]
